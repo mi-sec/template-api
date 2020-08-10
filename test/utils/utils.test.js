@@ -149,7 +149,7 @@ module.exports = function() {
 		const val = await utils.wait( 500, 'abc' );
 		const y   = Date.now();
 
-		expect( y - x ).to.satisfy( ( n ) => n > 500 && n < 600 );
+		expect( y - x ).to.satisfy( ( n ) => n >= 500 && n < 600 );
 		expect( val ).to.eq( 'abc' );
 		expect( () => utils.wait( 'abc' ) ).to.throw( 'Argument Error - expected number' );
 	} );
