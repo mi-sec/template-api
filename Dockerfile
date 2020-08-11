@@ -1,7 +1,6 @@
 FROM node:12
 
-# Create app directory
-WORKDIR /opt/app/
+WORKDIR /app/
 
 COPY ./package*.json ./
 
