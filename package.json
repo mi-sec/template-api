@@ -32,6 +32,7 @@
 		"postman-jsdoc-theme": "0.0.3"
 	},
 	"dependencies": {
+		"@hapi/joi": "^17.1.1",
 		"@mi-sec/lightmap": "^0.1.8",
 		"@pm2/io": "^4.3.5",
 		"config": "^3.3.1",

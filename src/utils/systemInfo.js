@@ -64,7 +64,8 @@ function cpuInfo() {
 		}, data
 	);
 
-	data.clockSpeed  = data.clockSpeed / cpus.length + ' MHz';
+	// note: clock speed may not be readable when running in a docker container
+	data.clockSpeed  = `${ data.clockSpeed / cpus.length } MHz`;
 	data.times.user  = data.times.user / cpus.length;
 	data.times.nice  = data.times.nice / cpus.length;
 	data.times.sys   = data.times.sys / cpus.length;
