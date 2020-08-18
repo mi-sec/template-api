@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>src/core/middleware/packet.js - Postman Documentation</title>
+
+    <script src="scripts/prettify/prettify.js"></script>
+    <script src="scripts/prettify/lang-css.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/ionicons.min.css">
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+<body>
+
+<input type="checkbox" id="nav-trigger" class="nav-trigger" />
+<label for="nav-trigger" class="navicon-button x">
+  <div class="navicon"></div>
+</label>
+
+<label for="nav-trigger" class="overlay"></label>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="Server.html">Server</a><ul class='methods'><li data-type='method'><a href="Server.html#actuators">actuators</a></li><li data-type='method'><a href="Server.html#actuators">actuators</a></li><li data-type='method'><a href="Server.html#bindProcess">bindProcess</a></li><li data-type='method'><a href="Server.html#bindProcess">bindProcess</a></li><li data-type='method'><a href="Server.html#expressInitialize">expressInitialize</a></li><li data-type='method'><a href="Server.html#expressInitialize">expressInitialize</a></li><li data-type='method'><a href="Server.html#hookRoute">hookRoute</a></li><li data-type='method'><a href="Server.html#hookRoute">hookRoute</a></li><li data-type='method'><a href="Server.html#initialize">initialize</a></li><li data-type='method'><a href="Server.html#initialize">initialize</a></li><li data-type='method'><a href="Server.html#onStart">onStart</a></li><li data-type='method'><a href="Server.html#onStart">onStart</a></li><li data-type='method'><a href="Server.html#onStop">onStop</a></li><li data-type='method'><a href="Server.html#onStop">onStop</a></li><li data-type='method'><a href="Server.html#sensors">sensors</a></li><li data-type='method'><a href="Server.html#sensors">sensors</a></li></ul></li></ul><h3>Mixins</h3><ul><li><a href="bytes.html">bytes</a></li><li><a href="hrtime.html">hrtime</a></li><li><a href="milliseconds.html">milliseconds</a></li><li><a href="radix.html">radix</a></li><li><a href="structs.html">structs</a></li><li><a href="uuid.html">uuid</a></li></ul><h3>Global</h3><ul><li><a href="global.html#bytesToSize">bytesToSize</a></li><li><a href="global.html#captureErrors">captureErrors</a></li><li><a href="global.html#packet">packet</a></li><li><a href="global.html#wait">wait</a></li></ul>
+</nav>
+
+<div id="main">
+    
+    <h1 class="page-title">src/core/middleware/packet.js</h1>
+    
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>/** ****************************************************************************************************
+ * @file: packet.js
+ * @project: template-api
+ * @author Nick Soggin &lt;iSkore@users.noreply.github.com> on 13-Aug-2018
+ *******************************************************************************************************/
+'use strict';
+
+const
+	UUIDv4 = require( 'uuid/v4' );
+
+/**
+ * packet
+ * @description
+ * construct basic wrapper operations for consistent api responses
+ * @param {http.Request} req - HTTP Request
+ * @param {http.Response} res - HTTP Response
+ * @param {function} next - next middleware function
+ */
+function packet( req, res, next ) {
+	req.log.trace( '[middleware] packet' );
+
+	const id = UUIDv4();
+
+	req.rid = id;
+	res.set( 'request-id', id );
+
+	next();
+}
+
+module.exports = () => packet;
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<br class="clear">
+
+<footer>
+    Documentation generated at Tue Aug 18 2020 16:59:21 GMT+0000 (Coordinated Universal Time)
+</footer>
+
+<script>prettyPrint();</script>
+<script src="scripts/linenumber.js"></script>
+</body>
+</html>
