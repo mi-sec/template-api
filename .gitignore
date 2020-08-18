@@ -487,3 +487,6 @@ paket-files/
 
 # cmake debug
 cmake-build-debug
+
+# ignore docs because github actions will make it
+docs
