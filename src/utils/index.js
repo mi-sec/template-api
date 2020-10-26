@@ -90,6 +90,10 @@ function bytesToSize( bytes ) {
 	return Math.round( bytes / Math.pow( 1024, i ) ) + ' ' + sizes[ i ];
 }
 
+function isPowerOfTwo( n ) {
+	return n && !( n & ( n - 1 ) );
+}
+
 module.exports = {
 	isNaN,
 	isUndefined,
@@ -104,5 +108,6 @@ module.exports = {
 	isFunction,
 	isValue,
 	wait,
-	bytesToSize
+	bytesToSize,
+	isPowerOfTwo
 };
