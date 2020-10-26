@@ -23,7 +23,7 @@
 <label for="nav-trigger" class="overlay"></label>
 
 <nav>
-    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="Server.html">Server</a><ul class='methods'><li data-type='method'><a href="Server.html#actuators">actuators</a></li><li data-type='method'><a href="Server.html#actuators">actuators</a></li><li data-type='method'><a href="Server.html#bindProcess">bindProcess</a></li><li data-type='method'><a href="Server.html#bindProcess">bindProcess</a></li><li data-type='method'><a href="Server.html#expressInitialize">expressInitialize</a></li><li data-type='method'><a href="Server.html#expressInitialize">expressInitialize</a></li><li data-type='method'><a href="Server.html#hookRoute">hookRoute</a></li><li data-type='method'><a href="Server.html#hookRoute">hookRoute</a></li><li data-type='method'><a href="Server.html#initialize">initialize</a></li><li data-type='method'><a href="Server.html#initialize">initialize</a></li><li data-type='method'><a href="Server.html#onStart">onStart</a></li><li data-type='method'><a href="Server.html#onStart">onStart</a></li><li data-type='method'><a href="Server.html#onStop">onStop</a></li><li data-type='method'><a href="Server.html#onStop">onStop</a></li><li data-type='method'><a href="Server.html#sensors">sensors</a></li><li data-type='method'><a href="Server.html#sensors">sensors</a></li></ul></li></ul><h3>Mixins</h3><ul><li><a href="bytes.html">bytes</a></li><li><a href="hrtime.html">hrtime</a></li><li><a href="milliseconds.html">milliseconds</a></li><li><a href="radix.html">radix</a></li><li><a href="structs.html">structs</a></li><li><a href="uuid.html">uuid</a></li></ul><h3>Global</h3><ul><li><a href="global.html#bytesToSize">bytesToSize</a></li><li><a href="global.html#captureErrors">captureErrors</a></li><li><a href="global.html#packet">packet</a></li><li><a href="global.html#wait">wait</a></li></ul>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="Server.html">Server</a><ul class='methods'><li data-type='method'><a href="Server.html#actuators">actuators</a></li><li data-type='method'><a href="Server.html#bindProcess">bindProcess</a></li><li data-type='method'><a href="Server.html#expressInitialize">expressInitialize</a></li><li data-type='method'><a href="Server.html#hookRoute">hookRoute</a></li><li data-type='method'><a href="Server.html#initialize">initialize</a></li><li data-type='method'><a href="Server.html#onStart">onStart</a></li><li data-type='method'><a href="Server.html#onStop">onStop</a></li><li data-type='method'><a href="Server.html#sensors">sensors</a></li></ul></li></ul><h3>Mixins</h3><ul><li><a href="bytes.html">bytes</a></li><li><a href="hrtime.html">hrtime</a></li><li><a href="milliseconds.html">milliseconds</a></li><li><a href="radix.html">radix</a></li><li><a href="structs.html">structs</a></li><li><a href="uuid.html">uuid</a></li></ul><h3>Global</h3><ul><li><a href="global.html#bytesToSize">bytesToSize</a></li><li><a href="global.html#captureErrors">captureErrors</a></li><li><a href="global.html#packet">packet</a></li><li><a href="global.html#wait">wait</a></li></ul>
 </nav>
 
 <div id="main">
@@ -130,6 +130,10 @@ function bytesToSize( bytes ) {
 	return Math.round( bytes / Math.pow( 1024, i ) ) + ' ' + sizes[ i ];
 }
 
+function isPowerOfTwo( n ) {
+	return n &amp;&amp; !( n &amp; ( n - 1 ) );
+}
+
 module.exports = {
 	isNaN,
 	isUndefined,
@@ -144,7 +148,8 @@ module.exports = {
 	isFunction,
 	isValue,
 	wait,
-	bytesToSize
+	bytesToSize,
+	isPowerOfTwo
 };
 </code></pre>
         </article>
@@ -158,7 +163,7 @@ module.exports = {
 <br class="clear">
 
 <footer>
-    Documentation generated at Tue Aug 18 2020 16:59:21 GMT+0000 (Coordinated Universal Time)
+    Documentation generated at Mon Oct 26 2020 22:51:03 GMT+0000 (Coordinated Universal Time)
 </footer>
 
 <script>prettyPrint();</script>
